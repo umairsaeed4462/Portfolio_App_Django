@@ -1,0 +1,69 @@
+.toggle{
+    display: none;
+}
+
+
+@media (max-width: 1201px){
+    /* utilities  */
+    .hidden{
+        display: none;
+    }
+    .toggle{
+        display: block;
+        position: absolute;
+        top: 5px;
+        right: 15px;
+        font-size: large;
+        border: 2px solid var(--primary-color);
+        padding: 5px 10px;
+        color: var(--primary-color);
+    }
+
+    /*========= working on navbar ======== */
+    .navbar{
+        width: 100vw;
+    }
+    .navbar .navs nav ul li{
+        max-width: 500px;
+        margin: 40px auto;
+    }
+
+    .navbar .p-info .logo{
+        margin-top: 90px;
+    }
+    /*=========End of navbar ======== */
+
+
+    
+    .main-section{
+        /* display: none; */
+        width: 100vw;
+        padding: 0rem 1rem;
+    }
+    .home{
+        padding: 0rem 6rem;
+    }
+    
+}
+
+
+@media (max-width: 843px){
+    html{
+        font-size: 55%;
+    }
+}
+@media (max-width: 722px){
+    html{
+        font-size: 50%;
+    }
+}
+@media (max-width: 513px){
+    html{
+        font-size: 45%;
+    }
+}
+@media (max-width: 441px){
+    html{
+        font-size: 40%;
+    }
+}

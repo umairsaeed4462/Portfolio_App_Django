@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@300;400;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* --nav-bg: black;
+    --nav-color: white;
+    --main-bg: orange;
+    --main-color: pink;
+    
+    --lite-color: gray; */
+
+    --main-font: 'Nunito', sans-serif;
+    --help-font: 'Roboto', sans-serif;
+
+    --main-bg: #151515;
+    --navbar-bg: #212121;
+    /* --main-bg: #f3f3fb;
+    --navbar-bg: #fbf9fe; */
+
+    --color: #fbffff;
+    /* --color: #2e2f43; */
+    --primary-color: #ff650b;
+    --btn-color: #fbffff;
+    /* --btn-color: #fbe9c3; */
+
+
+}
+
+/* *::selection{
+    background: var(--primary-color);
+    color: var(--navbar-bg)
+} */
+
+
+
+html {
+    font-size: 62.5%;
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: var(--navbar-bg);
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color);
+  }
+
+
+body {
+    overflow: hidden;
+}
+
+
+/* =================== navbar section ======================= */
+
+.navbar {
+    width: 25vw;
+    height: 100vh;
+    background-color: var(--navbar-bg);
+    /* background-color: #222; */
+    color: var(--color);
+    overflow-y: auto;
+}
+
+.navbar .p-info .logo {
+    margin: auto;
+    width: 16rem;
+    border-radius: 50%;
+    margin-top: 10px;
+
+}
+
+.navbar .p-info .logo img {
+    width: 16rem;
+    border-radius: 50%;
+}
+
+.navbar .p-info .name {
+    /* background-color: #fff; */
+    text-align: center;
+}
+
+.navbar .p-info .name h2 {
+    font-size: 3rem;
+    font-weight: bolder;
+    font-family: var(--main-font);
+}
+
+.navbar .p-info .name p {
+    font-size: 1.6rem;
+    line-height: 1.5;
+    font-family: cursive;
+}
+
+.navbar .navs nav {
+    /* background-color: wheat; */
+    margin-top: 10px;
+    font-family: var(--main-font);
+    padding: 1.2rem;
+}
+
+.navbar .navs nav ul li {
+    list-style: none;
+    margin: 20px 0;
+    background-color: var(--primary-color);
+    padding: 5px;
+    border-radius: 20px;
+    text-align: center;
+    border: 1px solid var(--primary-color);
+    /* color: var(--primary-color); */
+}
+
+.navbar .navs nav ul li a {
+    text-decoration: none;
+    font-size: 2.2rem;
+    font-family: monospace, Courier, cursive;
+    /* color: var(--primary-color); */
+    color: var(--btn-color);
+}
+
+.navbar .navs nav ul li:hover {
+    background-color: var(--primary-color);
+    cursor: pointer;
+}
+
+
+/* =================== End navbar section ======================= */
+
+
+/*================= main section css ================== */
+
+.main-section {
+    color: var(--color);
+    width: 75vw;
+    height: 100vh;
+    padding: 2rem;
+    background: var(--main-bg);
+    overflow-y: auto;
+}
+
+.main-section .section-title {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+.main-section .section-title h2 {
+    font-size: 3.5rem;
+    color: var(--primary-color);
+    font-weight: 700;
+    position: relative;
+    font-family: monospace;
+}
+
+.main-section .section-title h2::before {
+    content: '';
+    height: 4px;
+    width: 50px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--primary-color);
+}
+
+.main-section .section-title h2::after {
+    content: '';
+    height: 4px;
+    width: 25px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 8px;
+    background-color: var(--primary-color);
+}
+
+.main-section .section-info {
+    min-width: 100%;
+    min-height: 100%;
+    color: var(--color);
+    /* background-color: #fff; */
+}
+
+.main-section .section-info h3 {
+    font-size: 3.8rem;
+    flex: 0 0 100%;
+    padding: 1rem 0;
+}
+
+.main-section .section-info h3 span {
+    color: var(--primary-color);
+    font-family: monospace, Courier, cursive;
+}
+
+.main-section .section-info h2 {
+    font-size: 3rem;
+    flex: 0 0 100%;
+}
+
+.main-section .section-info h2 span {
+    color: var(--primary-color);
+    font-family: monospace, Courier, cursive;
+}
+
+.main-section .section-info p {
+    font-size: 2rem;
+}
+
+
+
+
+.home {
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    padding: 0 15rem;
+    font-family: var(--help-font);
+    /* background-color:black; */
+    /* background:#222; */
+}
+
+.home h3 {
+    font-size: 2.5rem;
+    font-family: var(--main-font);
+}
+
+.home h2 {
+    font-size: 5rem;
+}
+
+.home h2 span {
+    color: var(--primary-color);
+}
+
+.home p {
+    font-size: 2rem;
+    color: #eee;
+    padding: 1rem 0;
+    font-family: var(--main-font);
+    text-align: justify;
+    margin-top: 20px;
+}
+
+
+
+
+/*=================End main section css ================== */
+

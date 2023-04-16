@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/mobile.css">
+    <link rel="stylesheet" href="/static/css/utilities.css">
+    <link rel="stylesheet" href="/static/css/content.css">
+    <link rel="stylesheet" href="/static/css/services.css">
+    <link rel="stylesheet" href="/static/css/about.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <header class="container">
+        <section class="navbar hidden" id="navbar-section">
+            <div class="toggle" id="clossTogal" style="margin-top: 10px;">
+                X
+            </div>
+            <div class="p-info">
+
+                {% for u in userData %}
+
+                <div class="logo">
+                    <img src="/media/{{u.logo}}" alt="dp image">
+                </div>
+                <div class="name">
+                    <h2>{{u.name}}</h2>
+                    <p>{{u.desc}}</p>
+                </div>
+
+                {% endfor %}
+
+            </div>
+            <div class="navs">
+                <nav>
+                    <ul>
+                        <li id="navBtnHome"><a >Home</a></li>
+                        <!-- <li id="navBtnAbout"><a >About</a></li> -->
+                        <li id="navBtnServices"><a >Services</a></li>
+                        <li id="navBtnSkill"><a >Skills</a></li>
+                        <li id="navBtnProjects"><a >Projects</a></li>
+                        <li id="navBtnContent"><a >Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </section>
+        <section class="main-section" id="main-section">
+            <div class="toggle" id="simpleToggle" style="margin-top: 10px;">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            
+            <!-- home section starts  -->
+            <div class="section-info center" id="homeSection">
+                <main class="home" id="home">
+
+                    <h2>Hellow, my name is <span>Umair Saeed</span></h2>
+                    <h3>I'M a <span class="typing">Full Stack Developer</span></h3>
+                    
+                    {% for n in homeData %}
+
+                    <p>{{n.home_desc}}</p>
+
+                    {% endfor %}
+
+                    
+                    <a><button class="btn" id="navBtnAbout">About me <i class="fas fa-user"></i></button></a>
+
+                </main>
+            </div>
+            <!-- home section end  -->
+
+            <!-- content section start  -->
+            <div class="section-info hide" id="contactSection">
+                <main class="main show">
+                    <div class="page_title">
+                        <h2>Content</h2>
+                    </div>
+
+                    <!-- contact section starts  -->
+
+                    <div class="content">
+                        <div class="info">
+                            <!-- <h2>Get In Touch</h2> -->
+                            <div class="boxex">
+                                <div class="cbox">
+                                    <i class="fa-solid fa-phone"></i>
+                                    <div class="c-info">
+                                        <h4>Call Us On</h4>
+                                        <p>+92303-6940590</p>
+                                    </div>
+                                </div>
+                                <div class="cbox">
+                                    <i class="fa-solid fa-envelope"></i>
+                                    <div class="c-info">
+                                        <h4>Email Us At</h4>
+                                        <p>umairsaeed@gmail.com</p>
+                                    </div>
+                                </div>
+                                <div class="cbox">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    <div class="c-info">
+                                        <h4>Address</h4>
+                                        <p>Pakistan punjab pakpattan</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form">
+                            <h4>Message me</h4>
+                            <form action="">
+
+                                <input type="text" placeholder="name" class="box">
+                                <input type="email" placeholder="email" class="box">
+                                <input type="text" placeholder="project" class="box">
+                                <textarea name="" id="" rows="5" class="box message" placeholder="message"></textarea> <br>
+                                <button type="submit" class="btn"> send <i class="fas fa-paper-plane"></i> </button>
+                        
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- contact section ends -->
+
+                </main>
+            </div>
+            <!-- content section ends -->
+
+            <!-- services section start  -->
+            <div class="section-info hide" id="servicesSection">
+                <div class="page_title">
+                    <h2>My Services</h2>
+                </div>
+                <main class="services">
+                    <div class="contan">
+                        <div class="services-list">
+                            
+                            {% for item in servicesData %}
+
+                              <div>
+                                <i class="{{item.ser_icon}}"></i>
+                                <h2>{{item.ser_title}}</h2>
+                                <p>{{item.ser_desc}}</p>
+                               </div>
+
+                            {% endfor %}
+                            
+                            
+                        </div>
+                    </div>
+                </main>
+            </div>
+            <!-- services section end  -->
+
+            <!-- about section start -->
+            <div class="section-info hide" id="aboutSection">
+                <div class="page_title">
+                    <h2>About</h2>
+                </div>
+
+                <div class="content">
+
+                    {% for b in homeData %}
+
+                    <p class="about-para">{{b.long_desc}}</p>
+
+                    {% endfor %}
+
+                    <div class="table-info">
+                        <table>
+
+                            {% for c in aboutData %}
+
+                            <tr>
+                                <td> <p> <span>{{c.about_key}}: </span> {{c.about_value}} </p> </td>
+                    
+                            </tr>
+        
+                            {% endfor %}
+
+                            
+    
+                        </table>
+                    </div>
+
+                    <a href="/static/files/cv.pdf" download><button class="btn">Download CV</button></a>
+
+
+                </div>
+
+
+            </div>
+            <!-- about section end -->
+
+            <!-- Skill section start -->
+            <div class="section-info hide" id="skillSection">
+                <div class="page_title">
+                    <h2>Skills</h2>
+                </div>
+
+                <div class="skill-container">
+
+                    <div class="tab-list">
+                        <span class="tab-active" id="btnWebSkill">Web Skills</span>
+                        <span id="btnAndroidSkill">Android Skills</span>
+                    </div>
+
+                    <div class="row" id="webSkill">
+
+                        {% for ws in webSkill %}
+
+                        <div class="skill-item">
+                            <div class="skill-title">
+                                <h5>{{ws.skill_title}}</h5>
+                                <div class="skill-percent">{{ws.skill_percentage}}</div>
+                            </div>
+                            
+                            <div class="progress">
+                                <div class="progress-in" style="width: {{ws.skill_percentage}};"></div>
+                            </div>
+                        </div>
+
+                    {% endfor %}
+                        
+                        
+                    </div>
+
+                    <div class="row hide" id="mobileSkill">
+
+                        {% for as in androidSkill %}
+
+                        <div class="skill-item">
+                            <div class="skill-title">
+                                <h5>{{as.skill_title}}</h5>
+                                <div class="skill-percent">{{as.skill_percentage}}</div>
+                            </div>
+                            
+                            <div class="progress">
+                                <div class="progress-in" style="width: {{as.skill_percentage}};"></div>
+                            </div>
+                        </div>
+
+                    {% endfor %}
+                    </div>
+
+                </div>
+
+
+            </div>
+            <!-- Skill section end -->
+
+            <!-- projects section start  -->
+            <div class="section-info hide" id="projectSection">
+                <div class="page_title">
+                    <h2>Projects</h2>
+                </div>
+                <main class="services">
+
+                    <div class="tab-list">
+                        <span class="tab-active" id="btnWeb">Web Projects</span>
+                        <span id="btnAndroid">Android Projects</span>
+                    </div>
+
+                    <div class="contan">
+                        <div class="project-list hide" id="android">
+                            {% for ap in androidProjects %}
+
+
+                            <div class="project-box">
+                                <img src="/media/{{ap.p_img}}" alt="">
+                                <div class="project-title">
+                                    <div class="porject-name">
+                                        <h4>{{ap.p_title}}</h4>
+                                        <p>{{ap.p_desc}}</p>
+                                    </div>
+                                    <div class="project-link">
+                                        <a href="{{ap.p_github}}" target='_black'><i class="fa-brands fa-github" style="color: #e6ebe5;"></i></a>
+                                        <a href="{{ap.p_website}}" target='_black'><i class="fa-brands fa-edge" style="color: #e6ebe5;"></i></a>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+
+                            {% endfor %}
+                        </div>
+
+                        <div class="project-list" id="web">
+
+                            {% for wp in webProjects %}
+
+
+                            <div class="project-box">
+                                <img src="/media/{{wp.p_img}}" alt="">
+                                <div class="project-title">
+                                    <div class="porject-name">
+                                        <h4>{{wp.p_title}}</h4>
+                                        <p>{{wp.p_desc}}</p>
+                                    </div>
+                                    <div class="project-link">
+                                        <a href="{{wp.p_github}}" target='_black'><i class="fa-brands fa-github" style="color: #e6ebe5;"></i></a>
+                                        <a href="{{wp.p_website}}" target='_black'><i class="fa-brands fa-edge" style="color: #e6ebe5;"></i></a>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+
+                            {% endfor %}
+                        </div>
+                    </div>
+                </main>
+            </div>
+            <!-- projects section end  -->
+            
+
+        </section>
+    </header>
+
+
+
+
+    <!-- javaScript links  -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js" referrerpolicy="no-referrer"></script> -->
+    <script src="/static/js/typing.js"></script>
+    <script src="/static/js/script.js"></script>
+    <script src="/static/js/projects.js"></script>
+    <script src="/static/js/skills.js"></script>
+    <!-- typing cdn link  -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js" referrerpolicy="no-referrer"></script> -->
+</body>
+
+</html>
