@@ -87,32 +87,37 @@
                     <!-- contact section starts  -->
 
                     <div class="content">
-                        <div class="info">
-                            <!-- <h2>Get In Touch</h2> -->
-                            <div class="boxex">
-                                <div class="cbox">
-                                    <i class="fa-solid fa-phone"></i>
-                                    <div class="c-info">
-                                        <h4>Call Us On</h4>
-                                        <p>+92303-6940590</p>
+
+                        {% for si in staticInfo %}
+                        
+                            <div class="info">
+                                <div class="boxex">
+                                    <div class="cbox">
+                                        <i class="fa-solid fa-phone"></i>
+                                        <div class="c-info">
+                                            <h4>Call Us On</h4>
+                                            <p>{{si.my_off_no}}</p>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="cbox">
-                                    <i class="fa-solid fa-envelope"></i>
-                                    <div class="c-info">
-                                        <h4>Email Us At</h4>
-                                        <p>mumairsaeed4462@gmail.com</p>
+                                    <div class="cbox">
+                                        <i class="fa-solid fa-envelope"></i>
+                                        <div class="c-info">
+                                            <h4>Email Us At</h4>
+                                            <p>{{si.my_off_email}}</p>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="cbox">
-                                    <i class="fa-solid fa-location-dot"></i>
-                                    <div class="c-info">
-                                        <h4>Address</h4>
-                                        <p>Pakistan (punjab)</p>
+                                    <div class="cbox">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                        <div class="c-info">
+                                            <h4>Address</h4>
+                                            <p>{{si.my_off_address}}</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+
+                        {% endfor %}
+
                         <div class="form">
                             <h4>Message me</h4>
                             <form  action="/contact" method="post">
@@ -166,31 +171,36 @@
                     <!-- contact section starts  -->
 
                     <div class="content">
-                        <div class="info">
-                            <div class="boxex">
-                                <div class="cbox">
-                                    <i class="fa-solid fa-phone"></i>
-                                    <div class="c-info">
-                                        <h4>Call Us On</h4>
-                                        <p>+92303-6940590</p>
+                        
+                        {% for si in staticInfo %}
+                        
+                            <div class="info">
+                                <div class="boxex">
+                                    <div class="cbox">
+                                        <i class="fa-solid fa-phone"></i>
+                                        <div class="c-info">
+                                            <h4>Call Us On</h4>
+                                            <p>{{si.my_off_no}}</p>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="cbox">
-                                    <i class="fa-solid fa-envelope"></i>
-                                    <div class="c-info">
-                                        <h4>Email Us At</h4>
-                                        <p>mumairsaeed4462@gmail.com</p>
+                                    <div class="cbox">
+                                        <i class="fa-solid fa-envelope"></i>
+                                        <div class="c-info">
+                                            <h4>Email Us At</h4>
+                                            <p>{{si.my_off_email}}</p>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="cbox">
-                                    <i class="fa-solid fa-location-dot"></i>
-                                    <div class="c-info">
-                                        <h4>Address</h4>
-                                        <p>Pakistan (punjab)</p>
+                                    <div class="cbox">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                        <div class="c-info">
+                                            <h4>Address</h4>
+                                            <p>{{si.my_off_address}}</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+
+                        {% endfor %}
 
                         {% if status == "Sucessfully Submitted" %}
                             <p id="m1" style="margin: auto; color: green;">{{status}}</p>
@@ -289,7 +299,11 @@
                         </table>
                     </div>
 
-                    <a href="/static/files/cv.pdf" download><button class="btn">Download CV</button></a>
+                    {% for si in staticInfo %}
+                        <a href="/media/{{si.my_cv}}" download><button class="btn">Download CV</button></a>
+                    {% endfor %}
+
+                    
 
 
                 </div>

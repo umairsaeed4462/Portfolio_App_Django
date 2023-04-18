@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     'Projects',
     'Abouts',
     'userauth',
-    'contactinquery'
+    'contactinquery',
+    'mystaticinfo'
 ]
 
 MIDDLEWARE = [

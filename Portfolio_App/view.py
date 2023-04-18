@@ -7,8 +7,10 @@ from Projects.models import Product
 from Abouts.models import About
 from userauth.models import User
 from contactinquery.models import ContactInquery
+from mystaticinfo.models import MyStaticInfo
 from django.core.mail import send_mail
 from validate_email import validate_email
+
 
 from django.core.validators import validate_email as vm
 
@@ -28,6 +30,7 @@ def homePage(req):
     androidProjects = Product.objects.filter(p_category='android').values();
     aboutData = About.objects.all();
     userData = User.objects.all();
+    staticInfo = MyStaticInfo.objects.all();
     data = {
         'homeData':homeData,
         'servicesData': servicesData,
@@ -37,6 +40,7 @@ def homePage(req):
         'androidProjects': androidProjects,
         'aboutData': aboutData,
         'userData': userData,
+        'staticInfo': staticInfo,
         'isHome': isValue,
         'status': contentString
     }
