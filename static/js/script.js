@@ -76,8 +76,8 @@ btnProjects.addEventListener('click', ()=>{
     projectSection.classList.remove('hide');
 });
 
-
 function clossAllSections() {
+
     homeSection.classList.add('hide');
     aboutSection.classList.add('hide');
     contactSection.classList.add('hide');
@@ -87,5 +87,14 @@ function clossAllSections() {
 
     navbarBox.classList.toggle('hidden');
     mainSection.classList.toggle('hidden');
+
+    if(document.getElementById("m1") != null){
+        document.getElementById("m1").innerHTML = ""
+    }
+    if(document.getElementById("m2") != null){
+        document.getElementById("m2").innerHTML = ""
+    }
+
+
 
 }
